@@ -1,4 +1,4 @@
 target
 .idea
-GEN_Lab03.iml
+*.iml
 .DS_Store
