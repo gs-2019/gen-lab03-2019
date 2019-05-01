@@ -1,9 +1,9 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Board {
-    private List<Square> squares;
+    private Square[] squares;
 
-    public Board(List<Square> squares){
-        this.squares = squares;
+    Board(){
+        this.squares = new Square[40];
     }
 }
