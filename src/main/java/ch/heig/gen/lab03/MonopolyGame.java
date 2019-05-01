@@ -1,3 +1,5 @@
+package ch.heig.gen.lab03;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -41,7 +43,7 @@ public class MonopolyGame {
         while (playerCount < 2 || playerCount > 8);
 
         for (int i = 0; i < playerCount; ++i) {
-            players.add(new Player(game, "Player " + (i + 1)));
+            players.add(new Player(game, "ch.heig.gen.lab03.Player " + (i + 1)));
         }
 
         game.play();

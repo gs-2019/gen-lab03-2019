@@ -1,8 +1,10 @@
-import square.GoSquare;
-import square.GoToJailSquare;
-import square.IncomeTaxSquare;
-import square.RegularSquare;
-import square.Square;
+package ch.heig.gen.lab03;
+
+import ch.heig.gen.lab03.square.GoSquare;
+import ch.heig.gen.lab03.square.GoToJailSquare;
+import ch.heig.gen.lab03.square.IncomeTaxSquare;
+import ch.heig.gen.lab03.square.RegularSquare;
+import ch.heig.gen.lab03.square.Square;
 
 import java.util.ArrayList;
 import java.util.List;

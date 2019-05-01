@@ -1,4 +1,6 @@
-import square.Square;
+package ch.heig.gen.lab03;
+
+import ch.heig.gen.lab03.square.Square;
 
 public class Player {
 
@@ -26,7 +28,7 @@ public class Player {
         Square newLocation = game.getBoard().getSquare(oldLocation, faceValue);
         piece.setLocation(newLocation);
 
-        System.out.println(String.format("%s advances %d square%s", this, faceValue, faceValue == 1 ? "" : "s"));
+        System.out.println(String.format("%s advances %d ch.heig.gen.lab03.square%s", this, faceValue, faceValue == 1 ? "" : "s"));
         System.out.println(String.format("%s is now on %s", this, piece.getLocation()));
     }
 }
