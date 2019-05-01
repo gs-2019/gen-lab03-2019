@@ -17,4 +17,5 @@ public class Player {
 
     public Piece getPiece(){
         return piece;
+    }
 }
