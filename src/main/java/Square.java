@@ -1,26 +1,21 @@
-import java.util.ArrayList;
-
 public class Square {
-    private ArrayList<Piece> pieces;
 
-    private String name;
+    private int position;
 
-    private int pos;
+    public Square(int position) {
+        this.position = position;
+    }
 
-    Square(int pos){
-        if(pos==0){
-            this.name = "GO";
-        }else {
-            this.name = "Square" + (pos - 1);
+    public String toString() {
+
+        if (position == 0) {
+            return "GO";
         }
-        this.pos = pos;
+
+        return "Square " + position;
     }
 
-    public String getName(){
-        return this.name;
-    }
-
-    public int getPos(){
-        return this.pos;
+    public int getPosition() {
+        return this.position;
     }
 }
