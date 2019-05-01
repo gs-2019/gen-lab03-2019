@@ -6,5 +6,4 @@ public class Board {
     Board(){
         this.squares = new Square[40];
     }
-
 }

@@ -1,6 +1,7 @@
 public class Player {
     private Piece piece;
     private String name;
+  
     Player(String name){
         this.name = name;
         this.piece = new Piece();
@@ -16,5 +17,4 @@ public class Player {
 
     public Piece getPiece(){
         return piece;
-    }
 }

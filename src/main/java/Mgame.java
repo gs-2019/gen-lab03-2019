@@ -55,7 +55,6 @@ public class Mgame {
         Mgame game = new Mgame(dice1,dice2,board,players);
 
         game.play();
-
     }
 }
 

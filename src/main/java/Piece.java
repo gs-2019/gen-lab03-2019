@@ -1,5 +1,7 @@
 public class Piece {
-
+    private String name;
+    private Square square;
+ 
     Square curPos;
 
     public Piece(){

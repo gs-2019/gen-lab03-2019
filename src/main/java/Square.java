@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Square {
-
     private ArrayList<Piece> pieces;
 
     private String name;
@@ -24,5 +23,4 @@ public class Square {
     public int getPos(){
         return this.pos;
     }
-
 }
