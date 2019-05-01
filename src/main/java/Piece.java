@@ -1,19 +1,16 @@
 public class Piece {
-    private String name;
-    private Square square;
- 
-    Square curPos;
 
-    public Piece(){
-        curPos = new Square(0);
+    private Square location;
+
+    public Piece(Square location) {
+        setLocation(location);
     }
 
-    public void changePos(int score){
-        curPos = new Square(curPos.getPos()+score);
+    public void setLocation(Square location) {
+        this.location = location;
     }
 
-    public Square getCurPos(){
-        return this.curPos;
+    public Square getLocation() {
+        return location;
     }
-
 }
