@@ -41,4 +41,8 @@ public class Board {
     public Square getStart() {
         return squares.get(0);
     }
+
+    public Square getJail() {
+        return squares.get(10);
+    }
 }

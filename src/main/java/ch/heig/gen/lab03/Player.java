@@ -7,6 +7,7 @@ public class Player {
     private final MonopolyGame game;
     private final Piece piece;
     private final String name;
+    private int cash = 1500;
 
     public Player(MonopolyGame game, String name) {
         this.game = game;
@@ -30,5 +31,23 @@ public class Player {
 
         System.out.println(String.format("%s advances %d ch.heig.gen.lab03.square%s", this, faceValue, faceValue == 1 ? "" : "s"));
         System.out.println(String.format("%s is now on %s", this, piece.getLocation()));
+    }
+
+    public void payTax() {
+
+        double tax = cash * 0.1;
+        if (tax < 200) {
+            tax = 200;
+        }
+
+        cash -= tax;
+    }
+
+    public void addCash(int cash) {
+        this.cash += cash;
+    }
+
+    public void goToJail() {
+        piece.setLocation(game.getBoard().getJail());
     }
 }

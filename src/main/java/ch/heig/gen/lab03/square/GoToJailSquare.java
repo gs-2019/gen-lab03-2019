@@ -10,7 +10,7 @@ public class GoToJailSquare extends Square {
 
     @Override
     public void landedOn(Player player) {
-
+        player.goToJail();
     }
 
     @Override
