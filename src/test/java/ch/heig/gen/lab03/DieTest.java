@@ -1,3 +1,6 @@
+package ch.heig.gen.lab03;
+
+import ch.heig.gen.lab03.Die;
 import org.junit.jupiter.api.RepeatedTest;
 
 import static org.junit.jupiter.api.Assertions.*;

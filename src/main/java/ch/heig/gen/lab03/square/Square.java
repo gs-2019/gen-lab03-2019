@@ -1,4 +1,8 @@
-public class Square {
+package ch.heig.gen.lab03.square;
+
+import ch.heig.gen.lab03.Player;
+
+public abstract class Square {
 
     private int position;
 
@@ -6,14 +10,7 @@ public class Square {
         this.position = position;
     }
 
-    public String toString() {
-
-        if (position == 0) {
-            return "GO";
-        }
-
-        return "Square " + position;
-    }
+    public abstract void landedOn(Player player);
 
     public int getPosition() {
         return this.position;

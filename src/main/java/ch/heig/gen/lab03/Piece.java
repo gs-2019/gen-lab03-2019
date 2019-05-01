@@ -1,3 +1,7 @@
+package ch.heig.gen.lab03;
+
+import ch.heig.gen.lab03.square.Square;
+
 public class Piece {
 
     private Square location;

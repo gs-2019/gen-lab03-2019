@@ -1,3 +1,5 @@
+package ch.heig.gen.lab03;
+
 import java.util.Random;
 
 public class Die {
