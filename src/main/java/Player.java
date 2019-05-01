@@ -1,3 +1,5 @@
+import square.Square;
+
 public class Player {
 
     private final MonopolyGame game;

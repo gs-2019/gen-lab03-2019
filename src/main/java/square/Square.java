@@ -1,4 +1,6 @@
-public class Square {
+package square;
+
+public abstract  class Square {
 
     private int position;
 
@@ -12,7 +14,7 @@ public class Square {
             return "GO";
         }
 
-        return "Square " + position;
+        return "square.Square " + position;
     }
 
     public int getPosition() {

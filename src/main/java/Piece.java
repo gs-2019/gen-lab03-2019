@@ -1,3 +1,5 @@
+import square.Square;
+
 public class Piece {
 
     private Square location;
