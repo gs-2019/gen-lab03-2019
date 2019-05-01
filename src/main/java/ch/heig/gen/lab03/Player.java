@@ -16,20 +16,21 @@ public class Player {
     }
 
     public String toString() {
-        return name;
+        return String.format("%s [cash: %d]", name, cash);
     }
 
-    public void takeTurn(Die dice1, Die dice2) {
+    public void takeTurn(Die die1, Die die2) {
 
-        dice1.roll();
-        dice2.roll();
-        int faceValue = dice1.getFaceValue() + dice2.getFaceValue();
+        Cup cup = new Cup(die1, die2);
+        cup.roll();
+        int faceValue = cup.getTotal();
 
         Square oldLocation = piece.getLocation();
         Square newLocation = game.getBoard().getSquare(oldLocation, faceValue);
         piece.setLocation(newLocation);
+        piece.getLocation().landedOn(this);
 
-        System.out.println(String.format("%s advances %d ch.heig.gen.lab03.square%s", this, faceValue, faceValue == 1 ? "" : "s"));
+        System.out.println(String.format("%s advances %d square%s", this, faceValue, faceValue == 1 ? "" : "s"));
         System.out.println(String.format("%s is now on %s", this, piece.getLocation()));
     }
 
