@@ -1,52 +1,27 @@
 package ch.heig.gen.lab03;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public class MonopolyGame {
 
     private static final int MAX_TURN_COUNT = 20;
 
+    private final List<Player> players = new ArrayList<>();
     private Board board;
-    private List<Player> players;
-    private Die dice1, dice2;
+    private Die die1, die2;
 
-    public MonopolyGame(Die dice1, Die dice2, Board board, List<Player> players) {
-        this.dice1 = dice1;
-        this.dice2 = dice2;
-        this.board = board;
-        this.players = players;
-    }
+    public MonopolyGame(int playerCount) {
 
-    public static void main(String[] args) {
+        // create dice and board
+        this.die1 = new Die();
+        this.die2 = new Die();
+        this.board = new Board();
 
-        Board board = new Board();
-        List<Player> players = new ArrayList<>();
-        Die die1 = new Die();
-        Die die2 = new Die();
-        MonopolyGame game = new MonopolyGame(die1, die2, board, players);
-
-        int playerCount = 0;
-        do {
-            Scanner input = new Scanner(System.in);
-            System.out.println("Select the number of players (2-8): ");
-
-            try {
-                playerCount = input.nextInt();
-            }
-            catch (InputMismatchException e) {
-                playerCount = 0;
-            }
+        // create the players and add them to the list
+        for (int i = 0; i < playerCount; i++) {
+            players.add(new Player(this, "Player " + (i + 1)));
         }
-        while (playerCount < 2 || playerCount > 8);
-
-        for (int i = 0; i < playerCount; ++i) {
-            players.add(new Player(game, "ch.heig.gen.lab03.Player " + (i + 1)));
-        }
-
-        game.play();
     }
 
     public void play() {
@@ -56,7 +31,7 @@ public class MonopolyGame {
             System.out.println("==== Begin of turn " + (i + 1) + " ====");
 
             for (Player player : players) {
-                player.takeTurn(dice1, dice2);
+                player.takeTurn(die1, die2);
             }
         }
     }
@@ -65,5 +40,3 @@ public class MonopolyGame {
         return board;
     }
 }
-
-
