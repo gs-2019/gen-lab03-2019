@@ -44,13 +44,7 @@ public class Player {
     }
 
     public void payTax() {
-
-        double tax = cash * 0.1;
-        if (tax < 200) {
-            tax = 200;
-        }
-
-        cash -= tax;
+        cash -= Math.min(200,cash * 0.1);
     }
 
     public void addCash(int cash) {
