@@ -5,7 +5,7 @@ import ch.heig.gen.lab03.Player;
 public class RegularSquare extends Square {
 
     public RegularSquare(int position) {
-        super(position);
+        super(position, "Square " + position);
     }
 
     @Override
@@ -14,7 +14,7 @@ public class RegularSquare extends Square {
     }
 
     @Override
-    public String toString()     {
+    public String toString() {
         return "Square " + super.getPosition();
     }
 }

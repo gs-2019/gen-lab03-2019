@@ -4,17 +4,14 @@ import ch.heig.gen.lab03.Player;
 
 public class GoToJailSquare extends Square {
 
+    private static final String NAME = "Go to Jail";
+
     public GoToJailSquare() {
-        super(30);
+        super(GO_TO_JAIL, NAME);
     }
 
     @Override
     public void landedOn(Player player) {
         player.goToJail();
-    }
-
-    @Override
-    public String toString() {
-        return "Go to Jail";
     }
 }

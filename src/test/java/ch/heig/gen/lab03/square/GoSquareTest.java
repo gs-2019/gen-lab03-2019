@@ -4,12 +4,12 @@ import ch.heig.gen.lab03.Piece;
 import ch.heig.gen.lab03.Player;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GoSquareTest {
 
     @Test
-    public void goSquareLandedOnWork(){
+    public void goSquareLandedOnWork() {
         Square go = new GoSquare();
         Piece piece = new Piece(go);
 
@@ -18,5 +18,4 @@ class GoSquareTest {
         piece.getLocation().landedOn(player);
         assertEquals(1700, player.getCash());
     }
-
 }
