@@ -11,22 +11,23 @@ import java.util.List;
 
 public class Board {
 
-    public static final int SQUARE_COUNT = 40;
+    private static final int SQUARE_COUNT = 40;
 
-    private List<Square> squares;
+    private final List<Square> squares;
 
     public Board() {
 
         squares = new ArrayList<>(SQUARE_COUNT);
 
         for (int i = 0; i < SQUARE_COUNT; i++) {
-            if (i == 0) {
+
+            if (i == Square.GO) {
                 squares.add(new GoSquare());
             }
-            else if (i == 20) {
+            else if (i == Square.INCOME_TAX) {
                 squares.add(new IncomeTaxSquare());
             }
-            else if (i == 30) {
+            else if (i == Square.GO_TO_JAIL) {
                 squares.add(new GoToJailSquare());
             }
 
@@ -34,15 +35,11 @@ public class Board {
         }
     }
 
-    public Square getSquare(Square square, int offset) {
-        return squares.get((square.getPosition() + offset) % SQUARE_COUNT);
+    public Square getSquare(int position) {
+        return getSquare(position, 0);
     }
 
-    public Square getStart() {
-        return squares.get(0);
-    }
-
-    public Square getJail() {
-        return squares.get(10);
+    public Square getSquare(int position, int offset) {
+        return squares.get((position + offset) % SQUARE_COUNT);
     }
 }

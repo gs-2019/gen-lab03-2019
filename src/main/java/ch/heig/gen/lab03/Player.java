@@ -2,7 +2,11 @@ package ch.heig.gen.lab03;
 
 import ch.heig.gen.lab03.square.Square;
 
+import java.util.logging.Logger;
+
 public class Player {
+
+    private static final Logger LOG = Logger.getLogger(Player.class.getName());
 
     private final MonopolyGame game;
     private final Piece piece;
@@ -12,7 +16,7 @@ public class Player {
     public Player(MonopolyGame game, String name) {
         this.game = game;
         this.name = name;
-        this.piece = new Piece(game.getBoard().getStart());
+        this.piece = new Piece(game.getBoard().getSquare(Square.GO));
     }
 
     public String toString() {
@@ -26,12 +30,11 @@ public class Player {
         int faceValue = cup.getTotal();
 
         Square oldLocation = piece.getLocation();
-        Square newLocation = game.getBoard().getSquare(oldLocation, faceValue);
+        Square newLocation = game.getBoard().getSquare(oldLocation.getPosition(), faceValue);
         piece.setLocation(newLocation);
         piece.getLocation().landedOn(this);
 
-        System.out.println(String.format("%s advances %d square%s", this, faceValue, faceValue == 1 ? "" : "s"));
-        System.out.println(String.format("%s is now on %s", this, piece.getLocation()));
+        LOG.info(String.format("%s advances %d square%s to %s", this, faceValue, faceValue == 1 ? "" : "s", piece.getLocation()));
     }
 
     public void payTax() {
@@ -49,6 +52,6 @@ public class Player {
     }
 
     public void goToJail() {
-        piece.setLocation(game.getBoard().getJail());
+        piece.setLocation(game.getBoard().getSquare(Square.JAIL));
     }
 }

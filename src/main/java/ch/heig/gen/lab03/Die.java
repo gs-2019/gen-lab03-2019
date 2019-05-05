@@ -1,19 +1,15 @@
 package ch.heig.gen.lab03;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Die {
 
+    private static final int SIDE_COUNT = 6;
+
     private int faceValue;
 
-    public Die() {
-        this.faceValue = 0;
-    }
-
     public void roll() {
-        // Generate a random number between 1-6
-        Random rand = new Random();
-        this.faceValue = rand.nextInt(6) + 1;
+        this.faceValue = ThreadLocalRandom.current().nextInt(SIDE_COUNT) + 1;
     }
 
     public int getFaceValue() {

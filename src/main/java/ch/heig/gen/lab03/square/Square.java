@@ -6,16 +6,28 @@ import java.util.Objects;
 
 public abstract class Square {
 
-    private int position;
+    public static final int GO = 0;
+    public static final int JAIL = 10;
+    public static final int INCOME_TAX = 20;
+    public static final int GO_TO_JAIL = 30;
 
-    public Square(int position) {
+    private final int position;
+    private final String name;
+
+    public Square(int position, String name) {
         this.position = position;
+        this.name = name;
     }
 
     public abstract void landedOn(Player player);
 
     public int getPosition() {
-        return this.position;
+        return position;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
     @Override

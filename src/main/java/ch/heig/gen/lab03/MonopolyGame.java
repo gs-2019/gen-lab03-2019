@@ -2,9 +2,11 @@ package ch.heig.gen.lab03;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MonopolyGame {
 
+    private static final Logger LOG = Logger.getLogger(MonopolyGame.class.getName());
     private static final int MAX_TURN_COUNT = 20;
 
     private final List<Player> players = new ArrayList<>();
@@ -26,13 +28,17 @@ public class MonopolyGame {
 
     public void play() {
 
-        for (int i = 0; i < MAX_TURN_COUNT; ++i) {
+        for (int i = 1; i <= MAX_TURN_COUNT; ++i) {
+            playRound(i);
+        }
+    }
 
-            System.out.println("==== Begin of turn " + (i + 1) + " ====");
+    private void playRound(int roundIndex) {
 
-            for (Player player : players) {
-                player.takeTurn(die1, die2);
-            }
+        LOG.info("==== Begin of turn " + roundIndex + " ====");
+
+        for (Player player : players) {
+            player.takeTurn(die1, die2);
         }
     }
 
