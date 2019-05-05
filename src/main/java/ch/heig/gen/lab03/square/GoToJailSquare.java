@@ -7,7 +7,7 @@ public class GoToJailSquare extends Square {
     private static final String NAME = "Go to Jail";
 
     public GoToJailSquare() {
-        super(30, NAME);
+        super(GO_TO_JAIL, NAME);
     }
 
     @Override

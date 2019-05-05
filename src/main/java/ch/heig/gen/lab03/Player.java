@@ -19,7 +19,7 @@ public class Player {
         this.piece = new Piece(game.getBoard().getSquare(Square.GO));
     }
 
-    public Player(Piece piece, MonopolyGame game){
+    public Player(Piece piece, MonopolyGame game) {
         this.piece = piece;
         this.game = game;
         this.name = "Test";

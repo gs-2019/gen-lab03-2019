@@ -7,7 +7,7 @@ public class IncomeTaxSquare extends Square {
     public static final String NAME = "Income Tax";
 
     public IncomeTaxSquare() {
-        super(20, NAME);
+        super(INCOME_TAX, NAME);
     }
 
     @Override

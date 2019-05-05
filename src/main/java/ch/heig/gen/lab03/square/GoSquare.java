@@ -7,7 +7,7 @@ public class GoSquare extends Square {
     private static final String NAME = "Go";
 
     public GoSquare() {
-        super(0, NAME);
+        super(GO, NAME);
     }
 
     @Override
