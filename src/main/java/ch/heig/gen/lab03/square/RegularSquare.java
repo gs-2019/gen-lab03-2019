@@ -14,7 +14,7 @@ public class RegularSquare extends Square {
     }
 
     @Override
-    public String toString() {
+    public String toString()     {
         return "Square " + super.getPosition();
     }
 }

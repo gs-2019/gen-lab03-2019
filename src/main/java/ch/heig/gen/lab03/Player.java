@@ -15,6 +15,12 @@ public class Player {
         this.piece = new Piece(game.getBoard().getStart());
     }
 
+    public Player(Piece piece, MonopolyGame game){
+        this.piece = piece;
+        this.game = game;
+        this.name = "Test";
+    }
+
     public String toString() {
         return String.format("%s [cash: %d]", name, cash);
     }
@@ -50,5 +56,13 @@ public class Player {
 
     public void goToJail() {
         piece.setLocation(game.getBoard().getJail());
+    }
+
+    public int getCash() {
+        return cash;
+    }
+
+    public Piece getPiece() {
+        return piece;
     }
 }
