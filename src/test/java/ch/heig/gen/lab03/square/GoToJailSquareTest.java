@@ -12,11 +12,11 @@ class GoToJailSquareTest {
     @Test
     public void GoToJailSquareLandedOnWork(){
         MonopolyGame game = new MonopolyGame(1);
-        Piece piece = new Piece(game.getBoard().getJail());
+        Piece piece = new Piece(game.getBoard().getSquare(Square.JAIL));
         Player player = new Player(piece, game);
 
         piece.getLocation().landedOn(player);
-        assertTrue(game.getBoard().getJail().equals(player.getPiece().getLocation()));
+        assertTrue(game.getBoard().getSquare(Square.JAIL).equals(player.getPiece().getLocation()));
     }
 
 }
