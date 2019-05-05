@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DieTest {
 
-    @RepeatedTest(1000)
+    @RepeatedTest(100)
     public void testRangeDice(){
         Die d1 = new Die();
         d1.roll();
