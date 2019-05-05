@@ -19,6 +19,12 @@ public class Player {
         this.piece = new Piece(game.getBoard().getSquare(Square.GO));
     }
 
+    public Player(Piece piece, MonopolyGame game){
+        this.piece = piece;
+        this.game = game;
+        this.name = "Test";
+    }
+
     public String toString() {
         return String.format("%s [cash: %d]", name, cash);
     }
@@ -53,5 +59,13 @@ public class Player {
 
     public void goToJail() {
         piece.setLocation(game.getBoard().getSquare(Square.JAIL));
+    }
+
+    public int getCash() {
+        return cash;
+    }
+
+    public Piece getPiece() {
+        return piece;
     }
 }

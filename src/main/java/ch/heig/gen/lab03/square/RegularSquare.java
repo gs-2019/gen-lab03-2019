@@ -12,4 +12,9 @@ public class RegularSquare extends Square {
     public void landedOn(Player player) {
         // do nothing
     }
+
+    @Override
+    public String toString() {
+        return "Square " + super.getPosition();
+    }
 }
