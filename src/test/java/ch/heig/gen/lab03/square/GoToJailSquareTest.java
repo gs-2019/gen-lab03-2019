@@ -3,15 +3,23 @@ package ch.heig.gen.lab03.square;
 import ch.heig.gen.lab03.MonopolyGame;
 import ch.heig.gen.lab03.Piece;
 import ch.heig.gen.lab03.Player;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GoToJailSquareTest {
 
+    private MonopolyGame game;
+
+    @BeforeEach
+    public void createGame() {
+        game = new MonopolyGame(1);
+    }
+
     @Test
     public void GoToJailSquareLandedOnWork() {
-        MonopolyGame game = new MonopolyGame(1);
+
         Piece piece = new Piece(game.getBoard().getSquare(Square.JAIL));
         Player player = new Player(piece, game);
 
